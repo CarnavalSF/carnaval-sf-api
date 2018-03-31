@@ -1,0 +1,13 @@
+class CreateSponsors < ActiveRecord::Migration[5.1]
+  def change
+    create_table :sponsors do |t|
+      t.string :logo_data
+      t.string :name, null: false
+      t.string :website, null: false
+      t.boolean :featured, default: false, null: false
+      t.integer :position
+
+      t.timestamps
+    end
+  end
+end

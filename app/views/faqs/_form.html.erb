@@ -1,0 +1,30 @@
+<%= spectre_form_with model: @faq, local: true, class: 'form-horizontal' do |f| %>
+  <div class="card">
+    <div class="card-body">
+      <%= f.error_notification %>
+
+      <%= f.group :question do %>
+        <div class="col-3 col-sm-12">
+          <%= f.label :question %>
+        </div>
+        <div class="col-9 col-sm-12">
+          <%= f.text_field :question %>
+          <%= f.errors :question %>
+        </div>
+      <% end %>
+
+      <%= f.group :answer do %>
+        <div class="col-3 col-sm-12">
+          <%= f.label :answer %>
+        </div>
+        <div class="col-9 col-sm-12">
+          <%= f.text_area :answer %>
+          <%= f.errors :answer %>
+        </div>
+      <% end %>
+    </div>
+    <div class="card-footer mt-5 bg-gray">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

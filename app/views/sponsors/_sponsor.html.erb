@@ -1,0 +1,21 @@
+<%= content_tag :div, id: dom_id(sponsor), class: 'card mb-5' do %>
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <%= icon 'resize-vert c-move mr-5' %>
+      <div class="pr-5">
+        <%= image_tag sponsor.logo_url(:thumbnail), width: 100, class: 'c-move' %>
+      </div>
+      <div class="pr-5">
+        <%= content_tag :span, sponsor.name, class: 'text-bold' %>
+        <%= content_tag :small, 'FEATURED', class: 'label label-rounded' if sponsor.featured %>
+        <p class="tile-subtitle text-gray mb-0">
+          <%= link_to sponsor.website, sponsor.website %>
+        </p>
+      </div>
+      <div class="ml-auto">
+        <%= link_to 'Edit', edit_sponsor_path(sponsor), class: 'btn btn-primary' %>
+        <%= link_to icon('cross'), sponsor_path(sponsor), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-error' %>
+      </div>
+    </div>
+  </div>
+<% end %>

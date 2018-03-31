@@ -1,0 +1,108 @@
+<div class="card mb-5">
+  <div class="p-5 bg-gray d-flex align-items-center">
+    <div class="mr-5">
+      <div class="card-title h5">
+        FAQ's
+      </div>
+      <div class="card-subtitle text-gray">
+        <%= pluralize @faqs.size, 'question' %>
+      </div>
+    </div>
+    <div class="ml-auto">
+      <%= link_to 'Manage', faqs_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+  <% @faqs.each do |faq| %>
+    <div class="card-body">
+      <%= link_to faq.question, edit_faq_path(faq) %>
+    </div>
+  <% end%>
+</div>
+
+<div class="card mb-5">
+  <div class="p-5 bg-gray d-flex align-items-center">
+    <div class="mr-5">
+      <div class="card-title h5">
+        Events
+      </div>
+      <div class="card-subtitle text-gray">
+        <%= pluralize @events.size, 'event' %>
+      </div>
+    </div>
+    <div class="ml-auto">
+      <%= link_to 'Manage', events_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+  <% @events.each do |event| %>
+    <div class="card-body">
+      <%= link_to event.title, edit_event_path(event) %>
+    </div>
+  <% end%>
+</div>
+
+<div class="card mb-5">
+  <div class="p-5 bg-gray d-flex align-items-center">
+    <div class="mr-5">
+      <div class="card-title h5">
+        Sponsors
+      </div>
+      <div class="card-subtitle text-gray">
+        <%= pluralize @sponsors.size, 'sponsor' %>
+      </div>
+    </div>
+    <div class="ml-auto">
+      <%= link_to 'Manage', sponsors_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="columns">
+      <% @sponsors.each do |sponsor| %>
+        <div class="column col-sm-4 col-md-3 col-2">
+          <%= link_to image_tag(sponsor.logo_url(:thumbnail), class: 'img-responsive'), edit_sponsor_path(sponsor) %>
+        </div>
+      <% end%>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-5">
+<div class="p-5 bg-gray d-flex align-items-center">
+  <div class="mr-5">
+    <div class="card-title h5">
+      Food
+    </div>
+    <div class="card-subtitle text-gray">
+      <%= pluralize @foods.size, 'food' %>
+    </div>
+  </div>
+  <div class="ml-auto">
+    <%= link_to 'Manage', foods_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+<% @foods.each do |food| %>
+  <div class="card-body">
+    <%= link_to food.name, edit_food_path(food) %>
+  </div>
+<% end%>
+</div>
+
+<div class="card mb-5">
+<div class="p-5 bg-gray d-flex align-items-center">
+  <div class="mr-5">
+    <div class="card-title h5">
+      Vendor
+    </div>
+    <div class="card-subtitle text-gray">
+      <%= pluralize @vendors.size, 'vendor' %>
+    </div>
+  </div>
+  <div class="ml-auto">
+    <%= link_to 'Manage', vendors_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+<% @vendors.each do |vendor| %>
+  <div class="card-body">
+    <%= link_to vendor.name, edit_vendor_path(vendor) %>
+  </div>
+<% end%>
+</div>

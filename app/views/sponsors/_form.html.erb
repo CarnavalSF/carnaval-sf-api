@@ -1,0 +1,56 @@
+<%= spectre_form_with model: @sponsor, local: true, class: 'form-horizontal' do |f| %>
+  <div class="card">
+    <div class="card-body">
+      <%= f.error_notification %>
+
+      <%= f.group :name do %>
+        <div class="col-3 col-sm-12">
+          <%= f.label :name %>
+        </div>
+        <div class="col-9 col-sm-12">
+          <%= f.text_field :name %>
+          <%= f.errors :name %>
+          <%= f.hint 'Sponsor name to display on hover.' %>
+        </div>
+      <% end %>
+
+      <%= f.group :website do %>
+        <div class="col-3 col-sm-12">
+          <%= f.label :website %>
+        </div>
+        <div class="col-9 col-sm-12">
+          <%= f.text_field :website %>
+          <%= f.errors :website %>
+          <%= f.hint 'Sponsor website URL to navigate to when clicked.' %>
+        </div>
+      <% end %>
+
+      <%= f.group :logo do %>
+        <div class="col-3 col-sm-12">
+          <%= f.label :logo %>
+        </div>
+        <div class="col-9 col-sm-12">
+          <%= image_tag @sponsor.logo_url(:thumbnail), width: 200, class: 'mb-5' if @sponsor.logo  %>
+          <%= f.file_field :logo %>
+          <%= f.errors :logo %>
+          <%= f.hint 'Accepted formats: JPEG, PNG, GIF. Max file size: 15MB.' %>
+        </div>
+      <% end %>
+
+      <%= f.group :featured do %>
+        <div class="col-3 col-sm-12">
+          <%= f.label :featured %>
+        </div>
+        <div class="col-9 col-sm-12">
+          <%= f.check_label do %>
+            <%= f.check_box :featured %> Show this sponsor in the featured section.
+          <% end%>
+          <%= f.errors :featured %>
+        </div>
+      <% end %>
+    </div>
+    <div class="card-footer mt-5 bg-gray">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+<div class="card bg-gray mb-5">
+  <div class="card-body">
+    <%= link_to 'New Food', new_food_path, class: 'btn btn-success' %>
+  </div>
+</div>
+
+<div class="sortable" data-update-url="<%= sort_path(class_name: 'food') %>">
+  <% @foods.each do |food| %>
+    <%= render food %>
+  <% end %>
+</div>

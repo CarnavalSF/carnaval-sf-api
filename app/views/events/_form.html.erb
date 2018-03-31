@@ -1,0 +1,52 @@
+<%= spectre_form_with model: @event, local: true, class: 'form-horizontal' do |f| %>
+  <div class="card">
+    <div class="card-body">
+      <%= f.error_notification %>
+
+      <%= f.group :title do %>
+        <div class="col-3 col-sm-12">
+          <%= f.label :title %>
+        </div>
+        <div class="col-9 col-sm-12">
+          <%= f.text_field :title %>
+          <%= f.errors :title %>
+        </div>
+      <% end %>
+
+      <%= f.group :location do %>
+        <div class="col-3 col-sm-12">
+          <%= f.label :location %>
+        </div>
+        <div class="col-9 col-sm-12">
+          <%= f.select :location, event_locations %>
+          <%= f.errors :location %>
+        </div>
+      <% end %>
+
+      <%= f.group :description do %>
+        <div class="col-3 col-sm-12">
+          <%= f.label :description %>
+        </div>
+        <div class="col-9 col-sm-12">
+          <%= f.text_area :description %>
+          <%= f.errors :description %>
+        </div>
+      <% end %>
+
+      <%= f.group :image do %>
+        <div class="col-3 col-sm-12">
+          <%= f.label :image %>
+        </div>
+        <div class="col-9 col-sm-12">
+          <%= f.file_field :image %>
+          <%= f.errors :image %>
+          <%= f.hint 'Accepted formats: JPEG, PNG, GIF. Max file size: 15MB.' %>
+        </div>
+      <% end %>
+
+    </div>
+    <div class="card-footer mt-5 bg-gray">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
