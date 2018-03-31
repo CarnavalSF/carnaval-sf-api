@@ -18,16 +18,16 @@ require_relative 'deploy/nginx'
 require_relative 'deploy/secrets'
 
 set :user, 'ubuntu'
-set :domain, 'ec2-54-152-58-182.compute-1.amazonaws.com'
+set :domain, 'ec2-54-149-62-148.us-west-2.compute.amazonaws.com'
 set :identity_file, '~/pem/carnaval.pem'
 
 set :app_name, 'carnaval'
-set :app_root, '/Users/codyeatworld/projects/rails/sf-carnaval'
+set :app_root, '/Users/bellonzi/Desktop/sf-carnaval-rails'
 set :template_path, "#{fetch(:app_root)}/config/deploy/templates"
 
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:app_name)}"
 
-set :repository, 'git://github.com/codyeatworld/sf-carnaval-rails'
+set :repository, 'git://github.com/dbellonzi/carnaval-sf-api'
 set :branch, 'master'
 
 set :shared_dirs, fetch(:shared_dirs, []).push('log', 'tmp')
@@ -55,3 +55,11 @@ task :deploy do
     end
   end
 end
+
+desc "Deploys the current version to the server."
+task :c do
+  invoke :'rbenv:load'
+  invoke :'console'
+end
+
+
