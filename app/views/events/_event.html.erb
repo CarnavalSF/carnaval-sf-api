@@ -1,0 +1,20 @@
+<%= content_tag :div, id: dom_id(event), class: 'card mb-5' do %>
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <%= icon 'resize-vert c-move mr-5' %>
+        <div class="pr-5">
+          <%= image_tag event.image_url(:thumbnail), width: 100, class: 'c-move' if event.image %>
+        </div>
+        <div class="pr-5">
+          <%= content_tag :span, event.title, class: 'text-bold' %>
+          <p class="tile-subtitle text-gray mb-0">
+            <%= event.description %>
+          </p>
+        </div>
+        <div class="ml-auto">
+          <%= link_to 'Edit', edit_event_path(event), class: 'btn btn-primary' %>
+          <%= link_to icon('cross'), event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-error' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
