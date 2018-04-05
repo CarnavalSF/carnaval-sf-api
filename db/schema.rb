@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20180331213117) do
   create_table "faqs", force: :cascade do |t|
     t.text "question"
     t.text "answer"
+    t.text "category"
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,7 +49,7 @@ ActiveRecord::Schema.define(version: 20180331213117) do
     t.string "logo_data"
     t.string "name", null: false
     t.string "website", null: false
-    t.boolean "featured", default: false, null: false
+    t.string "featured", null: false
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

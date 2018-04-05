@@ -42,12 +42,12 @@
           <%= f.label :featured %>
         </div>
         <div class="col-9 col-sm-12">
-          <%= f.check_label do %>
-            <%= f.check_box :featured %> Show this sponsor in the featured section.
-          <% end%>
+          <%= f.select :featured, featured_tier %>
           <%= f.errors :featured %>
         </div>
       <% end %>
+
+      
     </div>
     <div class="card-footer mt-5 bg-gray">
       <%= f.submit class: 'btn btn-primary' %>

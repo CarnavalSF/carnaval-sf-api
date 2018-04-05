@@ -23,6 +23,17 @@
         </div>
       <% end %>
     </div>
+
+    <%= f.group :category do %>
+      <div class="col-3 col-sm-12">
+        <%= f.label :category %>
+      </div>
+      <div class="col-9 col-sm-12">
+        <%= f.select :category, faq_field %>
+        <%= f.errors :category %>
+      </div>
+    <% end %>
+
     <div class="card-footer mt-5 bg-gray">
       <%= f.submit class: 'btn btn-primary' %>
     </div>
