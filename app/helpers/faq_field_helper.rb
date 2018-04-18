@@ -1,9 +1,11 @@
 module FaqFieldHelper 
     def faq_field
         [
-          "photography",
-          "needs",
-          "fun"
+          "General",
+          "Festival",
+          "Parade",
+          "Photography",
+          "Volunteer/Participant"
         ]
       end
     end
