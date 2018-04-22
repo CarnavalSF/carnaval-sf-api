@@ -42,7 +42,9 @@
           <%= f.label :featured %>
         </div>
         <div class="col-9 col-sm-12">
-          <%= f.select :featured, featured_tier %>
+          <%= f.check_label do %>
+            <%= f.check_box :featured %> Show this sponsor in the featured section.
+          <% end%>
           <%= f.errors :featured %>
         </div>
       <% end %>

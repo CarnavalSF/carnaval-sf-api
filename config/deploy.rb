@@ -22,7 +22,7 @@ set :domain, 'ec2-54-149-62-148.us-west-2.compute.amazonaws.com'
 set :identity_file, '~/pem/carnaval.pem'
 
 set :app_name, 'carnaval'
-set :app_root, '/Users/bellonzi/Desktop/sf-carnaval-rails'
+set :app_root, '/Users/bellonzi/Desktop/carnaval-sf-api'
 set :template_path, "#{fetch(:app_root)}/config/deploy/templates"
 
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:app_name)}"
@@ -61,5 +61,3 @@ task :c do
   invoke :'rbenv:load'
   invoke :'console'
 end
-
-

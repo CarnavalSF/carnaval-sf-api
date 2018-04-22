@@ -7,7 +7,7 @@
       </div>
       <div class="pr-5">
         <%= content_tag :span, sponsor.name, class: 'text-bold' %>
-        <%= content_tag :small, sponsor.featured, class: 'label label-rounded' if sponsor.featured %>
+        <%= content_tag :small, "Featured", class: 'label label-rounded' if sponsor.featured %>
         <p class="tile-subtitle text-gray mb-0">
           <%= link_to sponsor.website, sponsor.website %>
         </p>

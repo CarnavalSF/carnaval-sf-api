@@ -4,7 +4,7 @@ class CreateSponsors < ActiveRecord::Migration[5.1]
       t.string :logo_data
       t.string :name, null: false
       t.string :website, null: false
-      t.string :featured, null: false
+      t.boolean :featured
       t.integer :position
 
       t.timestamps
