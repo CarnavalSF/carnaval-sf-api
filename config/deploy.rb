@@ -18,7 +18,7 @@ require_relative 'deploy/nginx'
 require_relative 'deploy/secrets'
 
 set :user, 'ubuntu'
-set :domain, 'ec2-54-149-62-148.us-west-2.compute.amazonaws.com'
+set :domain, 'ec2-35-166-31-9.us-west-2.compute.amazonaws.com'
 set :identity_file, '~/pem/carnaval.pem'
 
 set :app_name, 'carnaval'

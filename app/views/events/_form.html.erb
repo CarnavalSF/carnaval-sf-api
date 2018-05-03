@@ -33,12 +33,32 @@
         </div>
       <% end %>
 
+      <%= f.group :event_date do %>
+        <div class="col-3 col-sm-12">
+          <%= f.label :date %>
+        </div>
+        <div class="col-9 col-sm-12">
+          <%= f.select :event_date, event_dates %>
+          <%= f.errors :location %>
+        </div>
+      <% end %>
+
       <%= f.group :time do %>
         <div class="col-3 col-sm-12">
           <%= f.label :time %>
         </div>
         <div class="col-9 col-sm-12">
-          <%= f.datetime_field :time %>
+          <%= f.time_field :time %>
+          <%= f.errors :time %>
+        </div>
+      <% end %>
+
+      <%= f.group :end_time do %>
+        <div class="col-3 col-sm-12">
+          <%= f.label :end_time %>
+        </div>
+        <div class="col-9 col-sm-12">
+          <%= f.time_field :end_time %>
           <%= f.errors :time %>
         </div>
       <% end %>
