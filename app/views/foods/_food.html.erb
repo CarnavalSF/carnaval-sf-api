@@ -3,9 +3,6 @@
     <div class="d-flex align-items-center">
       <%= icon 'resize-vert c-move mr-5' %>
       <div class="pr-5">
-        <%= image_tag food.image_url(:thumbnail), width: 100, class: 'c-move' if food.image %>
-      </div>
-      <div class="pr-5">
         <%= content_tag :span, food.name, class: 'text-bold' %>
         <p class="tile-subtitle text-gray mb-0">
           <%= food.description %>

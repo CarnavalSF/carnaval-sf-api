@@ -8,7 +8,6 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.string :event_date, null: false
       t.string :location, null: false
       t.integer :position
-      t.string :image_data
 
       t.timestamps
     end

@@ -33,18 +33,6 @@
         </div>
       <% end %>
 
-      <%= f.group :image do %>
-        <div class="col-3 col-sm-12">
-          <%= f.label :image %>
-        </div>
-        <div class="col-9 col-sm-12">
-          <%= image_tag @vendor.image_url(:thumbnail), width: 200, class: 'mb-5' if @vendor.image  %>
-          <%= f.file_field :image %>
-          <%= f.errors :image %>
-          <%= f.hint 'Accepted formats: JPEG, PNG, GIF. Max file size: 15MB.' %>
-        </div>
-      <% end %>
-
     </div>
     <div class="card-footer mt-5 bg-gray">
       <%= f.submit class: 'btn btn-primary' %>
