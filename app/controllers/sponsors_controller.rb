@@ -26,7 +26,7 @@ class SponsorsController < ApplicationController
 
   def update
     if @sponsor.update_attributes(sponsor_params)
-      redirect_to edit_sponsor_url(@sponsor), success: 'Sponsor updated successfully.'
+      redirect_to sponsors_url(@sponsor), success: 'Sponsor updated successfully.'
     else
       render :edit
     end

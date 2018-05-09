@@ -26,7 +26,7 @@ class FaqsController < ApplicationController
 
   def update
     if @faq.update_attributes(faq_params)
-      redirect_to edit_faq_url(@faq), success: 'Faq updated successfully.'
+      redirect_to faqs_url(@faq), success: 'Faq updated successfully.'
     else
       render :edit
     end

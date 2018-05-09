@@ -26,7 +26,7 @@ class VendorsController < ApplicationController
 
   def update
     if @vendor.update_attributes(vendor_params)
-      redirect_to edit_vendor_url(@vendor), success: 'Vendor updated successfully.'
+      redirect_to vendors_url(@vendor), success: 'Vendor updated successfully.'
     else
       render :edit
     end
