@@ -1,7 +1,4 @@
 class Vendor < ApplicationRecord
-    # Image uploader
-    include SponsorLogoUploader[:image]
-    
     # List
     acts_as_list
     

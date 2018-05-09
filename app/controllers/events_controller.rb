@@ -26,7 +26,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update_attributes(event_params)
-      redirect_to edit_event_url(@event), success: 'Event updated successfully.'
+      redirect_to events_url(@event), success: 'Event updated successfully.'
     else
       render :edit
     end

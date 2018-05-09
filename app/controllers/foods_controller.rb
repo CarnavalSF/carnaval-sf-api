@@ -26,7 +26,7 @@ class FoodsController < ApplicationController
 
   def update
     if @food.update_attributes(food_params)
-      redirect_to edit_food_url(@food), success: 'Food updated successfully.'
+      redirect_to foods_url(@food), success: 'Food updated successfully.'
     else
       render :edit
     end
