@@ -17,13 +17,11 @@ ActiveRecord::Schema.define(version: 20180331213117) do
 
   create_table "events", force: :cascade do |t|
     t.string "title", null: false
-    t.text "description", null: false
     t.time "time", null: false
     t.time "end_time", null: false
     t.string "event_date", null: false
     t.string "location", null: false
     t.integer "position"
-    t.string "image_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,7 +38,6 @@ ActiveRecord::Schema.define(version: 20180331213117) do
   create_table "foods", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "image_data"
     t.integer "position"
     t.string "location"
     t.datetime "created_at", null: false
@@ -70,7 +67,6 @@ ActiveRecord::Schema.define(version: 20180331213117) do
   create_table "vendors", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "image_data"
     t.integer "position"
     t.string "location"
     t.datetime "created_at", null: false

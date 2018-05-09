@@ -3,12 +3,14 @@
       <div class="d-flex align-items-center">
         <%= icon 'resize-vert c-move mr-5' %>
         <div class="pr-5">
-          <%= image_tag event.image_url(:thumbnail), width: 100, class: 'c-move' if event.image %>
-        </div>
-        <div class="pr-5">
           <%= content_tag :span, event.title, class: 'text-bold' %>
           <p class="tile-subtitle text-gray mb-0">
-            <%= event.description %>
+            <%= event.location %>
+              :
+            <%= event.event_date %>
+            <%= event.time.strftime("%H:%M") %>
+              -
+            <%= event.end_time.strftime("%H:%M") %>
           </p>
         </div>
         <div class="ml-auto">

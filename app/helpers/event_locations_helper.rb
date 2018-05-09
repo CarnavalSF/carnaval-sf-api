@@ -4,7 +4,7 @@ module EventLocationsHelper
           "17th Street Stage",
           "20th Street Stage",
           "21st Street Stage",
-          "22nd Street Stage",
+          "23rd Street Stage",
           "18th Street DJ Booth",
           "19th Street DJ Booth",
           "22nd Street DJ Booth"

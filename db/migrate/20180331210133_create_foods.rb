@@ -3,7 +3,6 @@ class CreateFoods < ActiveRecord::Migration[5.1]
     create_table :foods do |t|
       t.string :name
       t.text :description
-      t.string :image_data
       t.integer :position
       t.string :location
 

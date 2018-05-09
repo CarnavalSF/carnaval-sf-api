@@ -18,8 +18,8 @@ require_relative 'deploy/nginx'
 require_relative 'deploy/secrets'
 
 set :user, 'ubuntu'
-set :domain, 'ec2-35-166-31-9.us-west-2.compute.amazonaws.com'
-set :identity_file, '~/pem/carnaval.pem'
+set :domain, 'ec2-35-166-67-156.us-west-2.compute.amazonaws.com'
+set :identity_file, '~/pem/CarnavalSF.pem'
 
 set :app_name, 'carnaval'
 set :app_root, '/Users/bellonzi/Desktop/carnaval-sf-api'
@@ -27,7 +27,7 @@ set :template_path, "#{fetch(:app_root)}/config/deploy/templates"
 
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:app_name)}"
 
-set :repository, 'git://github.com/dbellonzi/carnaval-sf-api'
+set :repository, 'git://github.com/CarnavalSF/carnaval-sf-api'
 set :branch, 'master'
 
 set :shared_dirs, fetch(:shared_dirs, []).push('log', 'tmp')
