@@ -3,7 +3,7 @@ class Food < ApplicationRecord
     acts_as_list
     
     # Validations
-    validates :name, :description, presence: true
+    validates :name, presence: true
     
     # Scopes
     scope :sorted, -> { order(:position) }
