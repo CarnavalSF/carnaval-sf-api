@@ -6,7 +6,7 @@ class Sponsor < ApplicationRecord
   acts_as_list
 
   # Validations
-  validates :name, :website, presence: true
+  validates :name, :website, :logo, presence: true
 
   # Scopes
   scope :sorted, -> { order(:position) }

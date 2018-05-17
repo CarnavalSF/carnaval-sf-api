@@ -3,7 +3,7 @@ class Event < ApplicationRecord
   acts_as_list
 
   # Validations
-  validates :title, :location, :time, presence: true
+  validates :title, :location, :time, :end_time, presence: true
 
   # Scopes
   scope :sorted, -> { order(:time) }
